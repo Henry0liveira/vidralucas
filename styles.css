@@ -87,7 +87,7 @@ body {
 
 .mirror-glass {
   position: relative;
-  padding: 4rem 6rem;
+  padding: clamp(2rem, 8vw, 6rem) clamp(2rem, 10vw, 6rem);
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0.05) 50%,
@@ -101,6 +101,7 @@ body {
     inset 0 -1px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   animation: glassFloat 3s ease-in-out infinite;
+  max-width: 90vw;
 }
 
 @keyframes glassFloat {
@@ -130,10 +131,10 @@ body {
 
 .mirror-text {
   font-family: 'Playfair Display', serif;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 12vw, 5rem);
   font-weight: 900;
   color: #fff;
-  letter-spacing: 3px;
+  letter-spacing: clamp(1px, 2%, 3px);
   text-transform: uppercase;
   text-shadow: 
     0 0 20px rgba(10, 110, 189, 0.5),
@@ -186,9 +187,9 @@ body {
 }
 
 .mirror-subtitle {
-  margin-top: 2rem;
+  margin-top: clamp(1rem, 5vw, 2rem);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
   font-weight: 300;
   letter-spacing: 2px;
   animation: pulse 2s ease-in-out infinite;
@@ -1134,6 +1135,49 @@ footer p { font-size: 0.8rem; }
   .dif-grid { grid-template-columns: 1fr; }
   .contato { grid-template-columns: 1fr; gap: 3rem; }
   .mirror-window { display: none; }
+  
+  /* Popup responsivo */
+  .mirror-container {
+    padding: 0 1rem;
+  }
+  
+  .mirror-glass::before {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: -30px;
+  }
+  
+  .mirror-glass::after {
+    width: 80px;
+    height: 80px;
+    bottom: -40px;
+    right: -40px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  /* Popup extra responsivo para celulares pequenos */
+  .mirror-glass {
+    padding: clamp(1.5rem, 6vw, 3rem) clamp(1.5rem, 7vw, 3rem);
+  }
+  
+  .mirror-text {
+    font-size: clamp(1.8rem, 10vw, 3.5rem);
+    letter-spacing: 1px;
+  }
+  
+  .mirror-subtitle {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    margin-top: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .mirror-splash::before {
+    width: 150%;
+    height: 150%;
+  }
 }
 
 /* SCROLL ANIMATIONS */
