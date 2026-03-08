@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#333;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#555;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Stairs -->
+  <g id="stairs">
+    <rect x="100" y="450" width="600" height="40" fill="#999"/>
+    <rect x="120" y="380" width="560" height="40" fill="#999"/>
+    <rect x="140" y="310" width="520" height="40" fill="#999"/>
+    <rect x="160" y="240" width="480" height="40" fill="#999"/>
+    <rect x="180" y="170" width="440" height="40" fill="#999"/>
+  </g>
+  
+  <!-- Glass railing -->
+  <rect x="580" y="100" width="20" height="370" fill="#1a1a1a"/>
+  <rect x="585" y="95" width="80" height="400" fill="#b0d4e3" opacity="0.4" stroke="#0A6EBD" stroke-width="2"/>
+  
+  <!-- Railing segments -->
+  <circle cx="600" cy="150" r="6" fill="#000"/>
+  <circle cx="600" cy="210" r="6" fill="#000"/>
+  <circle cx="600" cy="270" r="6" fill="#000"/>
+  <circle cx="600" cy="330" r="6" fill="#000"/>
+  
+  <!-- Title -->
+  <text x="400" y="60" font-size="40" font-weight="bold" text-anchor="middle" fill="#fff" font-family="Georgia">
+    CORRIMÃO DE ESCADA
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="120" font-size="28" text-anchor="middle" fill="#d4a76a" font-family="Georgia" font-style="italic">
+    Coloque sua segurança em
+  </text>
+  <text x="200" y="160" font-size="28" text-anchor="middle" fill="#d4a76a" font-family="Georgia" font-style="italic">
+    primeiro lugar!
+  </text>
+  
+  <!-- Benefits -->
+  <text x="100" y="510" font-size="18" fill="#fff">DEIXE SEU AMBIENTE SOFISTICADO E ELEGANTE</text>
+  
+  <!-- Contact info -->
+  <rect x="100" y="540" width="600" height="50" rx="10" fill="rgba(0,0,0,0.5)" stroke="#0A6EBD" stroke-width="2"/>
+  <text x="400" y="560" font-size="16" text-anchor="middle" fill="#fff">FALE SEU ORÇAMENTO!</text>
+  <text x="400" y="580" font-size="14" text-anchor="middle" fill="#fff">(12) 3641-2659 | (12) 98171-1143</text>
+</svg>

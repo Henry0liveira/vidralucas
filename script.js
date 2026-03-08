@@ -115,3 +115,73 @@ window.addEventListener('scroll', () => {
     if (link) link.style.color = y >= s.offsetTop && y < s.offsetTop + s.offsetHeight ? '#fff' : '';
   });
 });
+
+// CAROUSEL MODAL
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.indicator');
+
+function openCarousel() {
+  const modal = document.getElementById('carouselModal');
+  modal.classList.add('active');
+  currentSlide = 0;
+  updateCarousel();
+}
+
+function closeCarousel() {
+  const modal = document.getElementById('carouselModal');
+  modal.classList.remove('active');
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateCarousel();
+}
+
+function goToSlide(n) {
+  currentSlide = n;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  slides.forEach((slide, index) => {
+    slide.classList.toggle('active', index === currentSlide);
+  });
+  
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index === currentSlide);
+  });
+}
+
+// Fechar modal ao clicar fora
+document.getElementById('carouselModal')?.addEventListener('click', (e) => {
+  if (e.target.id === 'carouselModal') {
+    closeCarousel();
+  }
+});
+
+// Teclado - ESC para fechar
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCarousel();
+  }
+  // Setas do teclado
+  if (document.getElementById('carouselModal')?.classList.contains('active')) {
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  }
+});
+
+// Adicionar evento ao botão "Ver Serviços"
+const verServicosBtn = document.querySelector('.btn-ghost[href="#servicos"]');
+if (verServicosBtn) {
+  verServicosBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openCarousel();
+  });
+}

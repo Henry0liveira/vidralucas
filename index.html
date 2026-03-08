@@ -101,6 +101,49 @@
   </div>
 </div>
 
+<!-- MODAL DE CAROUSEL -->
+<div class="carousel-modal" id="carouselModal">
+  <div class="carousel-container">
+    <button class="carousel-close" onclick="closeCarousel()">✕</button>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-slides">
+        <!-- Slide 1: Janela -->
+        <div class="carousel-slide active">
+          <img src="assets/janela.svg" alt="Janela 1500x1000h" class="slide-image"/>
+        </div>
+        
+        <!-- Slide 2: Box Banheiro -->
+        <div class="carousel-slide">
+          <img src="assets/box-banheiro.svg" alt="Box de vidro incolor 8mm" class="slide-image"/>
+        </div>
+        
+        <!-- Slide 3: Corrimão -->
+        <div class="carousel-slide">
+          <img src="assets/corrimao.svg" alt="Corrimão de escada" class="slide-image"/>
+        </div>
+        
+        <!-- Slide 4: Portinha de Pia -->
+        <div class="carousel-slide">
+          <img src="assets/portinha-pia.svg" alt="Portinha de pia" class="slide-image"/>
+        </div>
+      </div>
+      
+      <!-- Controles -->
+      <button class="carousel-btn carousel-prev" onclick="prevSlide()">❮</button>
+      <button class="carousel-btn carousel-next" onclick="nextSlide()">❯</button>
+    </div>
+    
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <span class="indicator active" onclick="goToSlide(0)"></span>
+      <span class="indicator" onclick="goToSlide(1)"></span>
+      <span class="indicator" onclick="goToSlide(2)"></span>
+      <span class="indicator" onclick="goToSlide(3)"></span>
+    </div>
+  </div>
+</div>
+
 <!-- SERVIÇOS -->
 <section class="services" id="servicos">
   <div class="services-header reveal">
@@ -108,57 +151,14 @@
     <h2 class="section-title">Nossos Serviços</h2>
     <p>Do projeto à instalação, entregamos vidro e alumínio com acabamento impecável e prazo cumprido.</p>
   </div>
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <div class="service-icon">🪟</div>
-      <h3>Janelas & Portas</h3>
-      <p>Esquadrias de alumínio de alta durabilidade. Design moderno que valoriza a estética e melhora o isolamento acústico e térmico.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🚿</div>
-      <h3>Box de Banheiro</h3>
-      <p>Box de vidro temperado com perfis de alumínio. Elegância e segurança para o seu banheiro, com instalação rápida e garantida.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🪞</div>
-      <h3>Espelhos</h3>
-      <p>Espelhos sob medida para qualquer ambiente — banheiro, sala, academia, salão. Corte e instalação profissional.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏗️</div>
-      <h3>Corrimão de Escada</h3>
-      <p>Corrimãos em vidro e alumínio que combinam segurança com design sofisticado. Instalação conforme normas técnicas.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🍳</div>
-      <h3>Portinha de Pia</h3>
-      <p>Design único em vidro que dá um toque especial à sua cozinha. Funcional, higiênico e visualmente impactante.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏢</div>
-      <h3>Fachadas em Vidro</h3>
-      <p>Fachadas residenciais e comerciais com vidro temperado. Modernidade e imponência para a sua obra.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🛡️</div>
-      <h3>Vidro Blindado</h3>
-      <p>Proteção máxima com vidro blindado de alta performance. Ideal para residências, comércios e prédios de segurança crítica.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">💎</div>
-      <h3>Vidro Temperado</h3>
-      <p>Vidro temperado com máxima resistência e segurança. Perfeito para divisórias, tampos de mesa e estruturas de carga.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏗️</div>
-      <h3>Divisórias em Vidro</h3>
-      <p>Divisórias internas em vidro que otimizam espaços. Solução moderna para escritórios, consultórios e áreas comerciais.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🌟</div>
-      <h3>Vidro Espelhado</h3>
-      <p>Vidro espelhado fumê, bronze e transparente. Padrão profissional para fachadas, lojas e interiores sofisticados.</p>
-    </div>
+  
+  <!-- SERVIÇOS SLIDESHOW -->
+  <div class="services-slideshow reveal">
+    <button class="btn-slideshow" onclick="openCarousel()">
+      <span class="slideshow-icon">🖼️</span>
+      <span class="slideshow-text">Ver Galeria de Serviços</span>
+      <span class="slideshow-arrow">→</span>
+    </button>
   </div>
 </section>
 
