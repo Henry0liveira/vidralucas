@@ -101,49 +101,6 @@
   </div>
 </div>
 
-<!-- MODAL DE CAROUSEL -->
-<div class="carousel-modal" id="carouselModal">
-  <div class="carousel-container">
-    <button class="carousel-close" onclick="closeCarousel()">✕</button>
-    
-    <div class="carousel-wrapper">
-      <div class="carousel-slides">
-        <!-- Slide 1: Janela -->
-        <div class="carousel-slide active">
-          <img src="assets/janela.svg" alt="Janela 1500x1000h" class="slide-image"/>
-        </div>
-        
-        <!-- Slide 2: Box Banheiro -->
-        <div class="carousel-slide">
-          <img src="assets/box-banheiro.svg" alt="Box de vidro incolor 8mm" class="slide-image"/>
-        </div>
-        
-        <!-- Slide 3: Corrimão -->
-        <div class="carousel-slide">
-          <img src="assets/corrimao.svg" alt="Corrimão de escada" class="slide-image"/>
-        </div>
-        
-        <!-- Slide 4: Portinha de Pia -->
-        <div class="carousel-slide">
-          <img src="assets/portinha-pia.svg" alt="Portinha de pia" class="slide-image"/>
-        </div>
-      </div>
-      
-      <!-- Controles -->
-      <button class="carousel-btn carousel-prev" onclick="prevSlide()">❮</button>
-      <button class="carousel-btn carousel-next" onclick="nextSlide()">❯</button>
-    </div>
-    
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <span class="indicator active" onclick="goToSlide(0)"></span>
-      <span class="indicator" onclick="goToSlide(1)"></span>
-      <span class="indicator" onclick="goToSlide(2)"></span>
-      <span class="indicator" onclick="goToSlide(3)"></span>
-    </div>
-  </div>
-</div>
-
 <!-- SERVIÇOS -->
 <section class="services" id="servicos">
   <div class="services-header reveal">
@@ -151,14 +108,71 @@
     <h2 class="section-title">Nossos Serviços</h2>
     <p>Do projeto à instalação, entregamos vidro e alumínio com acabamento impecável e prazo cumprido.</p>
   </div>
-  
-  <!-- SERVIÇOS SLIDESHOW -->
-  <div class="services-slideshow reveal">
-    <button class="btn-slideshow" onclick="openCarousel()">
-      <span class="slideshow-icon">🖼️</span>
-      <span class="slideshow-text">Ver Galeria de Serviços</span>
-      <span class="slideshow-arrow">→</span>
-    </button>
+
+  <!-- CAROUSEL DE SERVIÇOS -->
+  <div class="carousel-container reveal" id="servicesCarousel">
+    <div class="carousel-wrapper">
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <div class="slide-layout">
+            <div class="slide-media">
+              <img src="assets/janela.svg" alt="Janela 1500x1000h" class="slide-image"/>
+            </div>
+            <aside class="slide-cta">
+              <h3>Faça seu orçamento</h3>
+              <p>Atendimento rápido para janelas, espelhos, box e esquadrias com instalação profissional.</p>
+              <a href="#contato" class="slide-cta-btn">Fale conosco</a>
+            </aside>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="slide-layout">
+            <div class="slide-media">
+              <img src="assets/box-banheiro.svg" alt="Box de vidro incolor 8mm" class="slide-image"/>
+            </div>
+            <aside class="slide-cta">
+              <h3>Faça seu orçamento</h3>
+              <p>Receba orientação sobre medidas, acabamento e a melhor opção para o seu ambiente.</p>
+              <a href="#contato" class="slide-cta-btn">Fale conosco</a>
+            </aside>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="slide-layout">
+            <div class="slide-media">
+              <img src="assets/corrimao.svg" alt="Corrimão de escada" class="slide-image"/>
+            </div>
+            <aside class="slide-cta">
+              <h3>Faça seu orçamento</h3>
+              <p>Projeto sob medida com segurança, resistência e acabamento de alto padrão.</p>
+              <a href="#contato" class="slide-cta-btn">Fale conosco</a>
+            </aside>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="slide-layout">
+            <div class="slide-media">
+              <img src="assets/portinha-pia.svg" alt="Portinha de pia" class="slide-image"/>
+            </div>
+            <aside class="slide-cta">
+              <h3>Faça seu orçamento</h3>
+              <p>Solicite seu atendimento e conheça as melhores opções para a sua obra.</p>
+              <a href="#contato" class="slide-cta-btn">Fale conosco</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn carousel-prev" onclick="prevSlide()" aria-label="Imagem anterior">❮</button>
+      <button class="carousel-btn carousel-next" onclick="nextSlide()" aria-label="Próxima imagem">❯</button>
+    </div>
+
+    <div class="carousel-indicators">
+      <span class="indicator active" onclick="goToSlide(0)"></span>
+      <span class="indicator" onclick="goToSlide(1)"></span>
+      <span class="indicator" onclick="goToSlide(2)"></span>
+      <span class="indicator" onclick="goToSlide(3)"></span>
+    </div>
   </div>
 </section>
 

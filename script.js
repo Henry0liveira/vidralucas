@@ -116,72 +116,67 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// CAROUSEL MODAL
+// CAROUSEL DE SERVICOS
 let currentSlide = 0;
+let autoplayTimer;
+const autoplayDelay = 2400;
 const slides = document.querySelectorAll('.carousel-slide');
 const indicators = document.querySelectorAll('.indicator');
-
-function openCarousel() {
-  const modal = document.getElementById('carouselModal');
-  modal.classList.add('active');
-  currentSlide = 0;
-  updateCarousel();
-}
-
-function closeCarousel() {
-  const modal = document.getElementById('carouselModal');
-  modal.classList.remove('active');
-}
+const slidesTrack = document.querySelector('.carousel-slides');
+const carouselRoot = document.getElementById('servicesCarousel');
 
 function nextSlide() {
+  if (!slides.length) return;
   currentSlide = (currentSlide + 1) % slides.length;
   updateCarousel();
 }
 
 function prevSlide() {
+  if (!slides.length) return;
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   updateCarousel();
 }
 
 function goToSlide(n) {
+  if (!slides.length) return;
   currentSlide = n;
   updateCarousel();
 }
 
 function updateCarousel() {
-  slides.forEach((slide, index) => {
-    slide.classList.toggle('active', index === currentSlide);
-  });
-  
+  if (!slidesTrack) return;
+  slidesTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
   indicators.forEach((indicator, index) => {
     indicator.classList.toggle('active', index === currentSlide);
   });
 }
 
-// Fechar modal ao clicar fora
-document.getElementById('carouselModal')?.addEventListener('click', (e) => {
-  if (e.target.id === 'carouselModal') {
-    closeCarousel();
-  }
-});
+function startAutoplay() {
+  if (!slides.length) return;
+  clearInterval(autoplayTimer);
+  autoplayTimer = setInterval(nextSlide, autoplayDelay);
+}
 
-// Teclado - ESC para fechar
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeCarousel();
-  }
-  // Setas do teclado
-  if (document.getElementById('carouselModal')?.classList.contains('active')) {
-    if (e.key === 'ArrowRight') nextSlide();
-    if (e.key === 'ArrowLeft') prevSlide();
-  }
-});
+function stopAutoplay() {
+  clearInterval(autoplayTimer);
+}
 
-// Adicionar evento ao botão "Ver Serviços"
-const verServicosBtn = document.querySelector('.btn-ghost[href="#servicos"]');
-if (verServicosBtn) {
-  verServicosBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openCarousel();
+if (slides.length && slidesTrack) {
+  updateCarousel();
+  startAutoplay();
+
+  carouselRoot?.addEventListener('mouseenter', stopAutoplay);
+  carouselRoot?.addEventListener('mouseleave', startAutoplay);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      nextSlide();
+      startAutoplay();
+    }
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      startAutoplay();
+    }
   });
 }
