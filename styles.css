@@ -1554,22 +1554,7 @@ footer {
 
 .tipos-vidro .fade-left, 
 .tipos-vidro .fade-right {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 260px;
-  z-index: 200;
-  pointer-events: none;
-}
-
-.tipos-vidro .fade-left {
-  left: 0;
-  background: linear-gradient(to right, #06101E 20%, transparent);
-}
-
-.tipos-vidro .fade-right {
-  right: 0;
-  background: linear-gradient(to left, #06101E 20%, transparent);
+  display: none;
 }
 
 /* Responsivo - Tablets */
